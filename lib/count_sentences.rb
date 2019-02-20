@@ -16,12 +16,8 @@ class String
   end
 
   def count_sentences
-    i=0
-    self.split.each do |string|
-      if string.include?("?") || string.include?(".") || string.include?("!")
-        i+=1
-      end
-    end
-    i
+    self.split.select do |string|
+      string.include?("?") || string.include?(".") || string.include?("!")
+    end.length
   end
 end
